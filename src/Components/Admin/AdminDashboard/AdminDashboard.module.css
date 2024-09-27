@@ -1,0 +1,75 @@
+/* Contenedor general del TabView */
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Estilos generales del TabView */
+.tabView {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  border-radius: 8px; /* Bordes redondeados para el TabView */
+  overflow: hidden; /* Evita que los elementos sobresalgan */
+}
+
+/* Estilos de las pestañas */
+.p-tabview-nav {
+  display: flex;
+  border-bottom: 1px solid #ddd; /* Borde inferior para separar las pestañas del contenido */
+  position: relative;
+  justify-content: center; /* Centra las pestañas horizontalmente */
+  background: #f0f0f0; /* Fondo de las pestañas */
+}
+
+/* Estilo de las pestañas individuales */
+.p-tabview-nav .p-tabview-nav-item {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border-top: 2px solid transparent;
+  border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+}
+
+/* Estilo para la pestaña activa */
+.p-tabview-nav .p-tabview-nav-item.p-highlight {
+  background: #ffffff; /* Fondo más claro para la pestaña activa */
+  border-top: 2px solid #0078d4; /* Línea de color para la pestaña activa */
+  color: #0078d4; /* Color del texto para la pestaña activa */
+  box-shadow: inset 0 -2px 0 #0078d4; /* Efecto de "fichero" con sombra inferior */
+  z-index: 1; /* Asegura que la pestaña activa se vea por encima de las otras */
+}
+
+/* Estilo para el contenido del TabPanel */
+.p-tabview .p-tabview-panels {
+  padding: 15px; /* Espaciado interno del contenido */
+}
+
+/* Estilos para el contenido de cada pestaña */
+.tabContent {
+  padding: 1em; /* Espaciado interno dentro de cada pestaña */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para el botón de cerrar sesión */
+.logoutButton {
+  background-color: #d5050f; /* Color de fondo rojo para el botón */
+  color: white; /* Color del texto del botón */
+  border: none; /* Elimina el borde por defecto del botón */
+  padding: 0.75em 2em; /* Espaciado interno del botón */
+  border-radius: 4px; /* Bordes redondeados del botón */
+  font-size: 1em; /* Tamaño de fuente del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+  margin-top: 1em; /* Espacio superior del botón */
+}
+
+.logoutButton:hover {
+  background-color: #a4040a; /* Color de fondo más oscuro al pasar el ratón */
+}

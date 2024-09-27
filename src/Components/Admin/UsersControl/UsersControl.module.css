@@ -1,0 +1,82 @@
+.searchBar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.searchBar .p-inputtext {
+    width: 70%; /* Ajusta el ancho según tus necesidades */
+}
+
+
+
+.card {
+    position: relative; /* Permite posicionar el botón de eliminar en relación con la tarjeta */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.cardContent {
+    flex: 1;
+    max-height: 150px; /* Ajusta la altura máxima según tus necesidades */
+    overflow-y: auto; /* Permite scroll vertical si el contenido excede la altura máxima */
+    margin-bottom: 50px; /* Añade espacio en la parte inferior para separar del botón de eliminar */
+}
+
+.cardText {
+    margin: 0;
+}
+
+.cardButton {
+    align-self: flex-end; /* Alinea el botón de ban a la derecha dentro del contenedor de la tarjeta */
+    margin-top: 20px; /* Añade un margen superior para separarlo del contenido */
+    background-color: #c40802;
+    border:none;
+    cursor: pointer;
+
+}
+.cardButton:hover {
+    background-color: #ff0800; /* Color de fondo cuando el botón es hovered */
+}
+
+.deleteButton {
+    position: absolute; /* Posiciona el botón de eliminar en relación con la tarjeta */
+    top: 4rem; /* Ajusta la distancia desde el borde superior de la tarjeta */
+    right: 10px; /* Ajusta la distancia desde el borde derecho de la tarjeta */
+    z-index: 1; /* Asegura que el botón esté por encima del contenido de la tarjeta */
+    background-color: #c40802; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 8px 16px; /* Espaciado interno del botón */
+    border-radius: 4px; /* Bordes redondeados del botón */
+    cursor: pointer; /* Muestra un cursor de mano al pasar sobre el botón */
+    font-size: 14px; /* Tamaño de la fuente del botón */
+}
+
+.deleteButton:hover {
+    background-color: #ff0800; /* Color de fondo cuando el botón es hovered */
+}
+.banButton {
+    background-color: #c40802; /* Rojo para banear */
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.banButton:hover {
+    background-color: #ff0800; /* Rojo más claro cuando el botón es hovered */
+}
+
+.unbanButton {
+    background-color: #28a745; /* Verde para desbanear */
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.unbanButton:hover {
+    background-color: #218838; /* Verde más oscuro cuando el botón es hovered */
+}

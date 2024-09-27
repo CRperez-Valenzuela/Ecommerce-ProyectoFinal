@@ -1,0 +1,69 @@
+/* .DatosAndTable {
+    display: flex;
+}
+
+.TableAndTotal {
+    display: flex;
+    flex-direction: column;
+}
+
+.TableColumns {
+    display: flex;
+}
+
+.ColumnsElements {
+    display: flex;
+    flex-direction: column;
+}
+
+.Producto {
+    display: flex;
+}
+
+.Producto img {
+    width: 150px;
+} */
+
+.TitleAndAll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.DatosAndTable {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.TableAndTotal {
+    width: 100%;
+    flex: 0 0 70%;
+}
+
+.ProductTable {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.ProductImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+
+.Producto {
+    display: flex;
+    align-items: center;
+}
+
+.Cantidad {
+    display: flex;
+    align-items: center;
+}
+
+.SideData {
+    flex: 0 0 30%
+}

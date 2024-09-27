@@ -1,0 +1,182 @@
+.checkout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.checkoutData {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.cart {
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.panel {
+    margin: 10px;
+    width: 100%;
+}
+
+.panel h5 {
+    margin: 2px;
+}
+
+.panel p {
+    margin: 2px;
+}
+
+.DataScroller {
+    width: 100%;
+    max-width: 1200px; /* Ajusta el ancho máximo según tus necesidades */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #e7e2e2;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.item img:hover {
+    transform: scale(1.1);
+}
+
+.itemDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.itemDetails h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.itemDetails h3 {
+    margin: 5px 0;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.cantidad {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cantidad i {
+    font-size: 1.2em;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.cantidad i:hover {
+    color: #000;
+}
+
+.cantidad h4 {
+    margin: 0 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+.item button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #acaaaa;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.item button:hover {
+    background-color: #949494;
+    transform: scale(1.05);
+}
+
+.totalText {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.PairRadioLabel {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    margin: 15px
+}
+
+.mpButton{
+    background-color: #949494 !important; /* Asegura que el color de fondo del botón sea rojo */
+    color: white; /* Color del texto del botón */
+    border: none; /* Elimina el borde del botón si es necesario */
+    padding: 0.5em 1em; /* Ajusta el padding según sea necesario */
+    border-radius: 4px; /* Opcional: Redondea las esquinas del botón */
+    font-size: 1em; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    text-align: center; /* Alinea el texto en el centro */
+    display: inline-flex; /* Alinea el botón en línea */
+    align-items: center; /* Alinea el contenido verticalmente en el centro */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Añade una sombra para dar un efecto de elevación */
+}
+.link {
+    text-decoration: none; /* Para quitar el subrayado */
+  }
+  
+  .link h4 {
+    color: #ff6347; /* Cambia esto por el color que desees */
+    font-size: 1.5rem; /* Cambia el tamaño de la fuente */
+    font-weight: bold; /* Puedes ajustar el grosor de la fuente */
+    transition: color 0.3s; /* Efecto de transición en el color */
+  }
+  
+  .link h4:hover {
+    color: #ffa07a; /* Color al hacer hover */
+  }

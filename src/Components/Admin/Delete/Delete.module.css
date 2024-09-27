@@ -1,0 +1,132 @@
+.deleteButton {
+  margin-top: 1rem; /* Ajusta el espacio entre el dropdown y el botón */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  background-color: #c40802; /* Rojo para el botón de eliminación */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+  padding: 0.5em 1em;
+}
+.formContainer {
+  width: 100%;
+  max-width: 600px; /* Ajusta el ancho máximo según sea necesario */
+  margin: 0 auto;
+  padding: 1rem;
+}
+.deleteButton:hover {
+  background-color: #ff0800; /* Color de fondo cuando el botón es hovered */
+}
+
+.searchButton {
+  justify-content: center;
+  background-color: #949494;
+  font-size: bold;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.searchButton:hover {
+  background-color: #b0b0b0;
+}
+
+.centered {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.SearchTittle {
+  font-size: bolder;
+}
+
+/* Estilos para la lista de sugerencias */
+.suggestionsList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  max-height:100px; /* Limita la altura máxima de la lista */
+  
+  overflow-y: auto;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* Asegura que la lista se coloque directamente debajo del input */
+  z-index: 1000; /* Para que la lista quede por encima de otros elementos */
+}
+
+.suggestionItem {
+  padding: 4px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.suggestionItem:hover {
+  background-color: #d6d1d1;
+}
+
+.suggestionItem:last-child {
+  border-bottom: none; /* Quita el borde del último elemento */
+}
+
+.pField {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos en columna */
+  gap: 0.5rem; /* Espacio entre el label y el campo de entrada */
+  width: 100%;
+}
+
+.pField label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.pField .p-inputtext,
+.pField .p-dropdown,
+.pField .p-multiselect,
+.pField .p-inputtextarea,
+.pField .p-fileupload {
+  width: 100%;
+  border-radius: 4px; /* Bordes redondeados para los campos */
+  border: 1px solid #ccc; /* Borde gris claro para los campos */
+  padding: 0.5rem; /* Espaciado interno */
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra interna para un efecto de profundidad */
+}
+
+.pField .p-card-footer {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.pFieldButton {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Añade una sombra para dar un efecto de elevación */
+  width: 100%;
+  background-color: #949494 !important; /* Asegura que el color de fondo del botón sea gris */
+  color: rgb(255, 255, 255); /* Color del texto del botón */
+  border: none; /* Elimina el borde del botón si es necesario */
+  border-radius: 4px; /* Opcional: Redondea las esquinas del botón */
+  font-size: 1em; /* Tamaño de fuente del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  text-align: center; /* Alinea el texto en el centro */
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.pFieldButton:hover {
+  background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+}
+
+.pFieldButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.searchInput {
+  width: 100%;
+  margin-bottom: 10px; /* espacio entre el input y el botón */
+}

@@ -1,0 +1,56 @@
+{
+  "private": true,
+  "dependencies": {
+    "@mercadopago/sdk-react": "^0.0.19",
+    "@react-oauth/google": "^0.12.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "axios": "^1.7.2",
+    "chart.js": "^4.4.3",
+    "grid": "^4.10.8",
+    "jwt-decode": "^4.0.0",
+    "prime": "^0.5.0",
+    "primeflex": "^3.3.1",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.8.2",
+    "quill": "^2.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.2.1",
+    "react-redux": "^8.1.3",
+    "react-router-dom": "^6.25.1",
+    "react-scripts": "^5.0.1",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2",
+    "sequelize": "^6.37.3",
+    "socket.io-client": "^4.7.5",
+    "sweetalert2": "^11.12.3",
+    "typeface-montserrat": "^1.1.13",
+    "web-vitals": "^3.0.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

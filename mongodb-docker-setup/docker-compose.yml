@@ -1,0 +1,39 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:latest
+    container_name: sneakers-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+      - ./init-scripts:/docker-entrypoint-initdb.d/
+    restart: always
+
+  db:
+    image: postgres:latest
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 191213
+      POSTGRES_DB: ShoeSportDB
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+  app: # Agregando servicio para tu aplicación
+    build: .
+    container_name: my-app
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000" # Cambia el puerto si es necesario
+    environment:
+      DATABASE_URL: postgres://postgres:191213@db:5432/ShoeSportDB # Usa el nombre del servicio aquí
+
+volumes:
+  postgres_data:

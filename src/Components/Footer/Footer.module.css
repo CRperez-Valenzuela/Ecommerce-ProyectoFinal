@@ -1,0 +1,212 @@
+
+.footer {
+    background-color: #f5f5f5;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+    height: auto;
+    padding-bottom: none;
+}
+
+.card {
+   padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 97%;
+    height: 97%;
+    margin: 0 auto;
+    padding-top: 0 !important;
+    
+}
+
+.grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+
+
+.column {
+    flex: 1;
+    margin-right: 1rem;
+    width: 25%;
+    margin-bottom: 0.5rem;
+}
+
+.column h5 {
+    color: #d5050f;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+
+
+.column p {
+    max-width: 50%;
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+.column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.column ul li {
+    margin-bottom: 0.3rem;
+}
+
+.column ul li a {
+    text-decoration: none;
+    color: #4dabf7;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.column ul li a:hover {
+    text-decoration: underline;
+    color: #d5050f;
+}
+
+.textCenter {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.textCenter p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.logosContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px; /* Espacio entre los logos */
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin: 0.2rem;
+    object-fit: contain;
+    filter: brightness(0) invert(0.3);
+    transition: filter 0.3s ease;
+    background-color: transparent;
+}
+
+.iconSpacing {
+    margin-left: 10px; /* Ajusta el valor según tus necesidades */
+  }
+
+.logo:hover {
+    filter: none;
+}
+
+.techUsed {
+    text-align: center;
+    justify-content: baseline;
+    margin-bottom: 0.3rem;
+    color: #d5050f;
+    font-size: 1rem;
+}
+
+.linkedInColumn {
+    display: flex;
+    flex-direction: column;
+    
+       
+}
+.linkedInColumn ul li a{
+    align-items: center;
+       
+}
+
+.linkedInColumn ul {
+    text-align: right;
+}
+.linkedInColumn ul li a {
+    margin-left: 10px;
+    padding-left: 10px;
+}
+.linkedInColumn ul li i {
+    margin-right: 10px;
+    
+}
+
+.link {
+    display: flex;
+    align-items:start;
+    text-decoration: none; /* Opcional: quita el subrayado del enlace */
+    color: red; /* Opcional: hereda el color del texto del elemento padre */
+  }
+  
+  .pi-linkedin {
+    font-size: 30px; /* Ajusta el tamaño del ícono */
+    color: #d62c2c; /* Color de LinkedIn */
+  }
+  
+  .p-mr-2 {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+  }
+
+  .footer .card .grid .linkedInColumn {
+    align-items: flex-end;
+}
+  
+
+
+  
+  @media (max-width: 1024px) {
+    .grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .column {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+    .column p {
+        max-width: 100%;
+    }
+    
+    .logo {
+        width: 25px;
+        height: 25px;
+    }
+    .columnDivider {
+        width: 100%;
+    }
+    .logosContainer {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 16px; /* Espacio entre los logos */
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .logo {
+        width: 70px;
+        height: 70px;
+        margin: 0.2rem;
+        object-fit: contain;
+        filter: brightness(0) invert(0.3);
+        transition: filter 0.3s ease;
+        background-color: transparent;
+    }
+    .footer .card .grid .linkedInColumn {
+        align-items: center;
+    }
+}

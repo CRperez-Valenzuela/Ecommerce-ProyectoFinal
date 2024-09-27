@@ -1,0 +1,78 @@
+/* UserDashboard.module.css */
+.tabView {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Ajusta según el tamaño deseado */
+  margin: 0 auto; /* Centra el TabView en la página */
+}
+
+.tabView .p-tabview-nav {
+  background-color: #f1f1f1; /* Fondo de las pestañas */
+  border-bottom: 1px solid #ddd; /* Línea inferior para las pestañas */
+  border-radius: 8px 8px 0 0; /* Bordes redondeados solo en la parte superior */
+  display: flex; /* Usa flexbox para centrar */
+  justify-content: center; /* Centra horizontalmente las pestañas */
+  padding: 0; /* Quita el padding por defecto */
+}
+
+.tabView .p-tabview-nav .p-tabview-nav-item {
+  margin: 0;
+  border: none;
+}
+
+.tabView .p-tabview-nav .p-tabview-nav-link {
+  padding: 1rem;
+  font-weight: bold;
+  color: #007bff;
+  display: inline-block; /* Asegura que los elementos se alineen correctamente */
+}
+
+.tabView .p-tabview-nav .p-tabview-nav-link.p-tabview-nav-link-active {
+  background-color: #007bff; /* Fondo de la pestaña activa */
+  color: #ffffff; /* Color del texto en la pestaña activa */
+  border-radius: 8px 8px 0 0; /* Bordes redondeados solo en la parte superior */
+}
+
+.tabView .p-tabview-content {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 0 0 8px 8px; /* Bordes redondeados solo en la parte inferior */
+  border-top: 1px solid #ddd; /* Línea superior para separar la pestaña activa del contenido */
+}
+.logoutContainer {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  margin-top: 2rem; /* Espacio superior para separar del contenido de la tarjeta */
+}
+
+.logoutButton {
+  background-color: #d5050f; /* Color de fondo rojo para el botón */
+  color: #ffffff; /* Color del texto blanco */
+  border: none; /* Sin borde predeterminado */
+  border-radius: 4px; /* Bordes redondeados */
+  padding: 0.75rem 1.5rem; /* Espacio interno */
+  font-size: 1rem; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s; /* Transición para el cambio de color */
+}
+
+.logoutButton:hover {
+  background-color: #a4040a; /* Color de fondo más oscuro al pasar el cursor */
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en múltiples líneas */
+  
+  justify-content: flex-start; /* Alinea las tarjetas al inicio del contenedor */
+  
+}
+
+.card {
+  flex: 1 1 200px; /* Las tarjetas ocuparán al menos 200px de ancho, pero se ajustarán según el espacio disponible */
+  max-width: 300px; /* Ancho máximo de cada tarjeta */
+  box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto total */
+  
+  margin: 1rem;
+}

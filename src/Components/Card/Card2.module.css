@@ -1,0 +1,104 @@
+.Card {
+    width: 20em; /* Ajusta el ancho según sea necesario */
+    height: auto; /* Ajusta la altura según sea necesario */
+    margin: 1em;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 1em;
+}
+
+.Card:hover {
+    transform: scale(1.05);
+}
+
+.card-header {
+  /* Ajusta la altura de la imagen según sea necesario */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+   
+}
+
+.card-header img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    padding: 1em;
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin: 0.5em 0;
+    overflow: hidden; /* Esconde el contenido que se desborda */
+    text-overflow: ellipsis; /* Muestra puntos suspensivos */
+    white-space: nowrap; /* Evita el salto de línea */
+    width: 100%; 
+}
+
+.card-subtitle {
+    font-size: 1em;
+    margin: 0.5em 0;
+    overflow: hidden; /* Esconde el contenido que se desborda */
+    text-overflow: ellipsis; /* Muestra puntos suspensivos */
+    white-space: nowrap; /* Evita el salto de línea */
+    width: 100%; /* Asegura que el subtítulo ocupe el ancho disponible */
+}
+
+.card-text {
+    font-size: 0.9em;
+    margin: 0.5em 0; /* Espacio entre el texto y otros elementos */
+}
+
+.p-card-footer {
+    padding: 0.5em; /* Ajusta el espaciado del pie de la tarjeta */
+}
+.card-footer {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+.card-button {
+    background-color: #949494 !important; /* Asegura que el color de fondo del botón sea rojo */
+    color: white; /* Color del texto del botón */
+    border: none; /* Elimina el borde del botón si es necesario */
+    padding: 0.5em 1em; /* Ajusta el padding según sea necesario */
+    border-radius: 4px; /* Opcional: Redondea las esquinas del botón */
+    font-size: 1em; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    text-align: center; /* Alinea el texto en el centro */
+    display: inline-flex; /* Alinea el botón en línea */
+    align-items: center; /* Alinea el contenido verticalmente en el centro */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Añade una sombra para dar un efecto de elevación */
+}
+.wishlistButton {
+    background: none;
+    border: inherit !important;
+    color: grey; /* Color por defecto */
+    font-size: 1.5rem; /* Tamaño del icono */
+    cursor: pointer;
+    transition: color 0.3s ease;
+    
+    top: 10px; /* Ajusta esta medida según el espacio que necesites desde la parte superior */
+    right: 10px; /* Ajusta esta medida según el espacio que necesites desde la parte derecha */
+    z-index: 10; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+.wishlistButton.active {
+    color: red; /* Color del icono cuando está en la wishlist */
+
+}

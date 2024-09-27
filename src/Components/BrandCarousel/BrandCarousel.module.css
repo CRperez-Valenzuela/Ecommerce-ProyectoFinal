@@ -1,0 +1,49 @@
+.custom-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Asegura que el carrusel ocupe el ancho completo */
+    max-height: 220px; 
+    margin-bottom: 40px;
+   
+}
+
+.custom-carousel .p-carousel-items {
+    display: flex;
+    align-items: center; /* Centra verticalmente los items */
+}
+
+.custom-carousel .p-carousel-item img {
+    max-width: 100%;
+    max-height: 200px; 
+    
+}
+
+/* Si quieres una animación de desplazamiento continuo */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+.custom-carousel .product-item {
+    .product-item {
+        width: 100%; /* Asegura que cada producto ocupe el ancho completo del item */
+        padding: 15px; /* Espaciado alrededor de cada item */
+    }
+}
+.product-item img {
+    max-width: 100%;
+    
+}
+@media (max-width: 768px) {
+    .custom-carousel {
+        max-height: 150px; /* Ajusta la altura para pantallas más pequeñas */
+    }
+
+    .custom-carousel .p-carousel-item img {
+        max-height: 130px;
+    }
+    
+}

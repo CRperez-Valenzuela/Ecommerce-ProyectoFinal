@@ -1,0 +1,42 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment Variables
+.env
+.env.build
+.vercel
+# Ignorar directorio node_modules
+node_modules/
+
+# Ignorar archivos y carpetas de MongoDB
+mongodb-docker-setup/data/journal/
+mongodb-docker-setup/data/*.wt
+
+# Ignorar archivos grandes en caché
+node_modules/.cache/
+
+# Ignorar otros archivos grandes
+*.pack
+*.log

@@ -1,0 +1,32 @@
+.transparentIcon {
+    background-color: transparent !important;
+    color: white;
+    border: none; /* Asegura que no haya bordes */
+    font-size: 1.5em;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none; /* Elimina cualquier sombra */
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.searchInput {
+    width: 200px; /* Ajusta el ancho según sea necesario */
+    font-size: 1em;
+    height: 2em; /* Ajusta la altura según sea necesario */
+    border-radius: 4px; /* Opcional: Añade bordes redondeados si lo prefieres */
+    outline: none; /* Elimina el recuadro azul al dar click */
+    border: 1px solid #ccc; /* Añade un borde de color gris claro */
+    padding-left: 10px; /* Añade padding interno a la izquierda */
+}
+
+.searchInput:focus {
+    border-color: #eef1f3d1; /* Color del borde al enfocar */
+    box-shadow: 0 0 4px rgba(76, 80, 86, 0.35); /* Sombra al enfocar */
+    outline: none; /* Elimina el recuadro azul al dar click */
+}

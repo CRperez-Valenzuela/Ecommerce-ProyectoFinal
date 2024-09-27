@@ -1,0 +1,34 @@
+/* 
+
+.navbar {
+    background: linear-gradient(to top, white 5%, #DDDDDD);
+    width: 100%; 
+    height: 100px;
+    display: flex; 
+    justify-content: space-between; /* Distribuye el espacio entre el logo y el resto del contenido */
+    align-items: center; 
+    padding: 10px 20px; /* Añade padding a los lados */
+    margin-bottom: 30px;
+   
+}
+
+.logo {
+    height: 88px; 
+    width: auto; 
+}
+
+.rightCenter {
+    display: flex;
+    flex-direction: column; /* Organiza las imágenes en una columna */
+    align-items: center; /* Centra las imágenes horizontalmente en su contenedor */
+    margin-right: 50px;
+}
+
+.icon {
+    margin-bottom: 15px; /* Espaciado entre los íconos */
+    height: 45px; /* Ajusta la altura de los íconos */
+    width: 44px; /* Ajusta el ancho de los íconos */
+    object-fit: contain; /* Asegura que la imagen mantenga su aspecto sin estirarse */
+    margin-right: 40px;
+} 
+*/
