@@ -44,13 +44,29 @@ exports.login = async (req, res) => {
 // Registrar
 exports.register = async (req, res) => {
     try {
-        const { username, email, password, isAdmin, ban, } = req.body;
+        const { username, email, password, isAdmin, ban } = req.body;
+
+        // Verificar si el usuario ya existe por email o username
+        const existingUser = await User.findOne({ 
+            where: {
+                [Op.or]: [{ email }, { username }]
+            }
+        });
+
+        if (existingUser) {
+            return res.status(400).json({ message: 'Usuario ya se encuentra registrado' });
+        }
+
+        // Hashear la contraseña
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        const user = await User.create({ username, email, password: hashedPassword, isAdmin, ban,});
+        // Crear el nuevo usuario
+        const user = await User.create({ username, email, password: hashedPassword, isAdmin, ban });
 
         // Enviar correo de confirmación de registro
         await sendRegistrationConfirmation(user.email, user.username);
+
+        // Responder con el nuevo usuario creado
         res.status(201).json(user);
     } catch (error) {
         console.error('Error registering user:', error);

@@ -243,7 +243,7 @@ export default function Signup() {
   // Fetch the list of banned emails from the backend
   const fetchBannedEmails = async () => {
     try {
-      const response = await axios.get("https://e-commerse-fc.onrender.com/api/users");
+      const response = await axios.get("https://localhost:3000/api/users");
       const users = response.data;
 
       // Filter out banned users and extract their emails
