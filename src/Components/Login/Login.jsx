@@ -63,7 +63,7 @@ export default function Login() {
 
     const handleLoginSuccess = async (response) => {
         try {
-            await axios.post(`http://localhost:3000/api/auth/google`, {
+            await axios.post(`https://localhost:3000/api/auth/google`, {
                 token: response.credential,
             })
             .then(({ data }) => {
@@ -72,7 +72,7 @@ export default function Login() {
                 return decodedToken;
             })
             .then(async ({ id }) => {
-                const user = await axios(`http://localhost:3000/api/users/${id}`);
+                const user = await axios(`https://localhost:3000/api/users/${id}`);
                 return user;
             })
             .then(({ data }) => {

@@ -6,9 +6,9 @@ module.exports = {
     init: (server) => {
         io = new Server(server, {
             cors: {
-                origin: 'https://pf-henry-trabajofinal.vercel.app', // Reemplaza con la URL de tu cliente
+                origin: 'http://localhost:3002', // Reemplaza con la URL de tu cliente
                 methods: ["GET", "POST"],
-                credentials: true
+                credentials: false
             }
         });
 
