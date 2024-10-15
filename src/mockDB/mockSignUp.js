@@ -22,7 +22,7 @@ export default async function signUp (userData, errors) {
     const body = {username, email, password, isAdmin: false}
 
     try {
-        var signupUser = await axios.post(`http://localhost:3000/api/auth/register`, body)
+        var signupUser = await axios.post(`http://localhost:3000/api/users/register`, body)
         console.log(signupUser)
     } catch ({response: {data}}) {
         const {message} = data

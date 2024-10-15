@@ -15,7 +15,7 @@ const sequelize = new Sequelize(DATABASE_URL, {
 
 sequelize.authenticate()
   .then(() => {
-    console.log('Base de datos sincronizada');
+    console.log('Base de datos sincronizada, escuchando en puerto: 3000');
   })
   .catch(err => {
     console.error('Error al sincronizar la base de datos:', err);

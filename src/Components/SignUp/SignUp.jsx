@@ -308,7 +308,7 @@ export default function Signup() {
             return decodedToken;
           })
           .then(async ({ id }) => {
-            const user = await axios(`http://localhost:3000/api/users/${id}`);
+            const user = await axios(`http://localhost:3000/api/user/register`);
             return user;
           })
           .then(({ data }) => {

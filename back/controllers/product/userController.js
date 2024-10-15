@@ -4,8 +4,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 
-// Registrar un nuevo usuario
-exports.register = async (req, res) => {
+
+/*exports.register = async (req, res) => {
     try {
         const { username, email, password, isAdmin, preference, }  = req.body;
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -15,10 +15,8 @@ exports.register = async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: 'Error registering user' });
     }
-};
-
-// Iniciar sesión
-exports.login = async (req, res) => {
+};*/
+/*exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
         const user = await User.findOne({ where: { email } });
@@ -31,6 +29,63 @@ exports.login = async (req, res) => {
         res.json({ token });
     } catch (error) {
         res.status(500).json({ message: 'Error logging in' });
+    }
+};*/
+
+// Registrar un nuevo usuario
+
+exports.register = async (req, res) => {
+    try {
+        const { username, email, password, isAdmin, preference, } = req.body;
+        const hashedPassword = await bcrypt.hash(password, 10);
+        // Verificar si el usuario ya existe por email o username
+        const existingUser = await User.findOne({ 
+            where: {
+                [Op.or]: [{ email }, { username }]
+            }
+        });
+
+        if (existingUser) {
+            return res.status(400).json({ message: 'Usuario ya se encuentra registrado' });
+        }
+
+         // Crear el nuevo usuario
+        const user = await User.create({ username, email, password: hashedPassword, isAdmin, preference, ban:false });
+
+        // Enviar correo de confirmación de registro
+        await sendRegistrationConfirmation(user.email, user.username);
+
+        // Responder con el nuevo usuario creado
+        res.status(201).json(user);
+    } catch (error) {
+        console.error('Error registering user:', error);
+        res.status(500).json({ message: 'Error registering user' });
+    }
+};
+
+// Iniciar sesión
+exports.login = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        // Encuentra al usuario por email
+        const user = await User.findOne({ where: { email } });
+        console.log('User found:', user);
+
+        // Verifica si el usuario existe
+        if (!user || !await bcrypt.compare(password, user.password)) {
+            return res.status(401).json({ message: 'Invalid email or password' });
+        }
+ // Genera el token
+        const secretKey = process.env.JWT_SECRET;
+        
+        const token = jwt.sign({ id: user.id, isAdmin: user.isAdmin }, secretKey, { expiresIn: '1h' });
+        res.json({ token,
+            user: { id: user.id, email: user.email, isAdmin: user.isAdmin }
+         });
+    } catch (error) {
+        console.error('Error logging in:', error);
+        res.status(500).json({ message: 'Error logging in', error: error.message });
     }
 };
 
