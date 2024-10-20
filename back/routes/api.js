@@ -46,7 +46,7 @@ router.delete('/sizes/:id', sizesController.deleteSize);
 
 //Users
 router.get('/users', usersController.getAllUsers);
-router.post('/users/register', usersController.register);
+router.post('/register', usersController.register);
 router.post('/users/login', usersController.login);
 router.post('/auth/google', authController.googleAuth);
 router.get('/users/:id', usersController.getUserProfile);

@@ -272,7 +272,7 @@ export const getUsers = () => async dispatch => {
 
 export const updateUserBanStatus = (userId, banStatus) => async dispatch => {
   try {
-    const response = await axios.put(`http://localhost:3000/api/users/${userId}`, { ban: banStatus });
+    const response = await axios.put(`http://localhost:3000/users/${userId}`, { ban: banStatus });
     dispatch({
       type: UPDATE_USER_BAN_STATUS,
       payload: response.data,
@@ -285,7 +285,7 @@ export const updateUserBanStatus = (userId, banStatus) => async dispatch => {
 export const deleteUser = (userId) => async (dispatch) => {
   try {
     // Enviar solicitud para eliminar el usuario
-    await axios.delete(`http://localhost:3000/api/users/${userId}`);
+    await axios.delete(`http://localhost:3000/users/${userId}`);
     
     // Dispatch de la acción para actualizar el estado en Redux
     dispatch({
@@ -304,7 +304,7 @@ export const deleteUser = (userId) => async (dispatch) => {
 export const userInfoChange = (userId, updatedData) => async(dispatch) =>{
 
   try {
-    const response = await axios.put(`http://localhost:3000/api/users/${userId}`, updatedData)
+    const response = await axios.put(`http://localhost:3000/users/${userId}`, updatedData)
     console.log(response)
     dispatch({
       type: USER_INFO_CHANGE,
