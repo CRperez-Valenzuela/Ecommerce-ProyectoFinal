@@ -2,6 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 var logger = require('morgan');
 var cors = require('cors'); // Requerir el paquete cors
 
@@ -20,6 +21,7 @@ app.use(logger('dev')); // Registro de solicitudes HTTP
 app.use(express.json()); // Parseo de JSON
 app.use(express.urlencoded({ extended: false })); // Parseo de datos URL-encoded
 app.use(cookieParser()); // Parseo de cookies
+app.use(bodyParser());
 app.use(express.static(path.join(__dirname, 'public'))); // Servir archivos estáticos desde 'public'
 
 // Configuración de CORS

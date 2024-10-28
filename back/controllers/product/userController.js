@@ -3,7 +3,7 @@ const { User, Shoe, Addresses, Order} = require('../../models');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { Op } = require('sequelize');
-
+import { sendRegistrationConfirmation } from '../../config/nodemailer/mailer';
 
 /*exports.register = async (req, res) => {
     try {
@@ -37,6 +37,8 @@ const { Op } = require('sequelize');
 exports.register = async (req, res) => {
     try {
         const { username, email, password, isAdmin, preference, } = req.body;
+        console.log('Request body:', req.body)
+
         const hashedPassword = await bcrypt.hash(password, 10);
         // Verificar si el usuario ya existe por email o username
         const existingUser = await User.findOne({ 
@@ -50,10 +52,10 @@ exports.register = async (req, res) => {
         }
 
          // Crear el nuevo usuario
-        const user = await User.create({ username, email, password: hashedPassword, isAdmin, preference, ban:false });
+        const user = await User.create({ username, email, password: hashedPassword, isAdmin: false, preference: false, ban: false  });
 
         // Enviar correo de confirmación de registro
-        await sendRegistrationConfirmation(user.email, user.username);
+       // await sendRegistrationConfirmation(user.email, user.username);
 
         // Responder con el nuevo usuario creado
         res.status(201).json(user);

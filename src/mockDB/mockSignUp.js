@@ -4,8 +4,8 @@ import axios from "axios"
 
 export default async function signUp (userData, errors) {
 
-    const { email, password, passwordRepeat, username } = userData
-
+    const { username, email, password, passwordRepeat } = userData
+  
     if (!email || !password || !passwordRepeat || !username) {
         alertSwal("Faltan campos por completar")
         return
@@ -19,14 +19,22 @@ export default async function signUp (userData, errors) {
         return
     }
 
-    const body = {username, email, password, isAdmin: false}
-
+    const body = {username: userData.username,
+        email: userData.email,
+        password: userData.password,
+        isAdmin: false,
+        ban: false,
+        preference: false
+        }
+ 
+        
     try {
-        var signupUser = await axios.post(`http://localhost:3000/api/users/register`, body)
-        console.log(signupUser)
+        
+        var signupUser = await axios.post(`http://localhost:3000/api/register`, body)
+        
     } catch ({response: {data}}) {
         const {message} = data
-
+        console.log (data)
         if (message === "Already registered email") {
             alertSwal("Este email ya está registrado")
         }

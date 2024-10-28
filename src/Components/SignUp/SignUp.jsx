@@ -224,7 +224,6 @@ import Swal from 'sweetalert2';
 import "primeicons/primeicons.css"; // icons
 
 
-
 export default function Signup() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -233,34 +232,10 @@ export default function Signup() {
     username: "",
     email: "",
     password: "",
-    passwordRepeat: "",
-    ban: false
+    passwordRepeat: ""
   });
 
   const [errors, setErrors] = useState({});
-  const [bannedEmails, setBannedEmails] = useState([]);
-
-  // Fetch the list of banned emails from the backend
-  const fetchBannedEmails = async () => {
-    try {
-      const response = await axios.get("http://localhost:3000/api/users");
-      const users = response.data;
-
-      // Filter out banned users and extract their emails
-      const banned = users
-        .filter(user => user.ban)
-        .map(user => user.email);
-
-      setBannedEmails(banned);
-    } catch (error) {
-      console.error("Error fetching banned users:", error);
-    }
-  };
-
-  // Fetch banned emails on component mount
-  useEffect(() => {
-    fetchBannedEmails();
-  }, []);
 
   const handleChange = (event) => {
     setUserData({ ...userData, [event.target.name]: event.target.value });
@@ -276,75 +251,46 @@ export default function Signup() {
     event.preventDefault();
     validation(userData, setErrors, errors);
 
-    // Validar si las contraseñas coinciden antes de enviar el formulario
-    if (userData.password !== userData.passwordRepeat) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error en el registro',
-        text: 'Las contraseñas no coinciden.',
-      });
-      return;
-    }
-
-    // Check if the email is in the list of banned emails
-    if (bannedEmails.includes(userData.email)) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Correo Baneado',
-        text: 'Este correo ha sido baneado y no puede registrarse nuevamente.',
-      });
-      return;
-    }
-
     try {
-      // Intentar registrar al usuario
-      const flag = await signUp(userData, errors);
+        const flag = await signUp(userData, errors);
+        console.log(flag);
 
-      // Si se recibe "flag", el usuario se ha registrado correctamente
-      if (flag === "flag") {
-        await logIn(userData)
-          .then(({ data: { token } }) => {
+        if (flag === "flag") {
+            const { data: { token } } = await logIn(userData);
             const decodedToken = jwtDecode(token);
-            return decodedToken;
-          })
-          .then(async ({ id }) => {
-            const user = await axios(`http://localhost:3000/api/user/register`);
-            return user;
-          })
-          .then(({ data }) => {
+            const { id } = decodedToken;
+
+            const { data } = await axios(`http:localhost:3000/api/users/${id}`);
             const userData = {
-              ...data,
-              wishList: !data.wishList ? [] : data.wishList,
-              shoppingHistory: !data.shoppingHistory ? [] : data.shoppingHistory,
-              email: !data.email ? "" : data.email,
-              addresses: !data.addresses ? [] : data.addresses
+                ...data,
+                wishList: data.wishList || [],
+                shoppingHistory: data.shoppingHistory || [],
+                email: data.email || "",
+                addresses: data.addresses || []
             };
+
             dispatch(loginUser(userData));
             navigate("/home");
-          })
-          .catch(error => {
-            console.log(error.message);
-          });
-      }
+        }
     } catch (error) {
-      // Capturar el error del backend si el usuario ya está registrado
-      if (error.response && error.response.data.message === "Usuario ya se encuentra registrado") {
-        Swal.fire({
-          icon: 'error',
-          title: 'Usuario ya registrado',
-          text: 'El usuario con este correo o nombre ya está registrado.',
-        });
-      } else {
-        // Manejar otros errores
-        console.error("Error registrando usuario:", error);
-        Swal.fire({
-          icon: 'error',
-          title: 'Error en el registro',
-          text: 'Ocurrió un error al registrar el usuario. Por favor, inténtalo de nuevo.',
-        });
-      }
+        // Capturar el error del backend si el usuario ya está registrado
+        if (error.response && error.response.data.message === "Usuario ya se encuentra registrado") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Usuario ya registrado',
+                text: 'El usuario con este correo o nombre ya está registrado.',
+            });
+        } else {
+            // Manejar otros errores
+            console.error("Error registrando usuario:", error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error en el registro',
+                text: 'Ocurrió un error al registrar el usuario. Por favor, inténtalo de nuevo.',
+            });
+        }
     }
-  };
+};
   return (
     <div>
       <div className={styles.signupContainer}>
