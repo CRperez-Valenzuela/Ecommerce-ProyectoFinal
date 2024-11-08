@@ -1,0 +1,23 @@
+# Usa una imagen de Node para construir el proyecto
+FROM node:18 AS build
+
+# Establece el directorio de trabajo
+WORKDIR /app
+
+# Copia el package.json e instala dependencias
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install
+
+# Copia el resto de los archivos y construye el proyecto
+COPY . .
+RUN npm run build
+
+# Usa Nginx para servir la aplicación
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Expone el puerto 5000 para servir la aplicación
+EXPOSE 5000
+
+CMD ["nginx", "-g", "daemon off;"]

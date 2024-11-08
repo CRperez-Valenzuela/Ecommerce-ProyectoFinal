@@ -1,0 +1,69 @@
+version: '3'
+services:
+  # Servicio para MongoDB
+  mongo:
+    image: mongo:latest
+    container_name: sneakers-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+      - ./init-scripts:/docker-entrypoint-initdb.d/
+    restart: always
+
+  # Servicio para PostgreSQL
+  db:
+    image: postgres:latest
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 191213
+      POSTGRES_DB: ShoeSportDB
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+  # Servicio para el Backend
+  backend:
+    build:
+      context: ../  # Contexto de construcción en la raíz del proyecto
+      dockerfile: dockerfile  # Ruta del Dockerfile del backend
+    container_name: backend-app
+    depends_on:
+      - db
+      - mongo
+    volumes:
+      - ./back:/app
+    ports:
+      - "3000:3000"  # Puerto expuesto del backend
+    environment:
+      DATABASE_URL: postgres://postgres:191213@db:5432/ShoeSportDB
+      MONGO_URL: mongodb://mongo:27017/sneakers-db  # URL para conexión a MongoDB
+    restart: always
+    working_dir: /app
+
+  # Servicio para el Frontend
+  frontend:
+    build:
+      context: ../../client/src  # Contexto de construcción en la raíz del proyecto
+      dockerfile: dockerfile  # Ruta del Dockerfile del frontend
+    container_name: frontend-app
+    depends_on:
+      - backend
+    volumes:
+      - ./src:/app
+    ports:
+      - "5000:5000"  # Puerto expuesto del frontend
+    environment:
+      REACT_APP_API_URL: http://backend:3000  # URL para conectar al backend desde el frontend
+    restart: always
+    working_dir: /app
+
+volumes:
+  postgres_data:
+
+networks:
+  ecommerce-network:
+    driver: bridge

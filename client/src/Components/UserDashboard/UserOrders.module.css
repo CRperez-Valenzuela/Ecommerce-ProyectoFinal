@@ -1,0 +1,53 @@
+/* 
+
+.AcordionTab{
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+}
+
+.DataAndImage {
+    display: flex;
+    justify-content:start;
+    gap: 50px;
+}
+
+.DataAndImage img {
+    width: 250px;
+} */
+
+.DataScroller {
+    padding: 1rem;
+}
+
+.OrderItem {
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.DataAndImage {
+    display: flex;
+    align-items: center;
+}
+
+.DataAndImage img {
+    margin-left: 1rem;
+    max-width: 100px;
+    border-radius: 8px;
+}
+.button{
+    background-color: #949494 !important; /* Asegura que el color de fondo del botón sea rojo */
+    color: white; /* Color del texto del botón */
+    border: none; /* Elimina el borde del botón si es necesario */
+    padding: 0.5em 1em; /* Ajusta el padding según sea necesario */
+    border-radius: 4px; /* Opcional: Redondea las esquinas del botón */
+    font-size: 1em; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    text-align: center; /* Alinea el texto en el centro */
+    display: inline-flex; /* Alinea el botón en línea */
+    align-items: center; /* Alinea el contenido verticalmente en el centro */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Añade una sombra para dar un efecto de elevación */
+}

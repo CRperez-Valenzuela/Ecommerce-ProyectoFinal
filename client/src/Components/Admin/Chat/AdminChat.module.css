@@ -1,0 +1,99 @@
+
+/* Contenedor principal del chat */
+.chatContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra similar al TabView del Dashboard */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #ffffff; /* Fondo blanco para el chat */
+  }
+  
+  /* Contenedor del chat con estilo similar a las pestañas del Dashboard */
+  .chatBox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px; /* Ancho máximo del chat */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Evita que el contenido sobresalga */
+  }
+  
+  /* Encabezado del chat */
+  .chatHeader {
+    background-color: #007bff; /* Color de fondo azul para el encabezado */
+    color: white; /* Color del texto del encabezado */
+    padding: 0.5em 1em; /* Espaciado interno del encabezado */
+    font-size: 1.2em; /* Tamaño de fuente del encabezado */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Área de mensajes */
+  .chatMessages {
+    flex: 1;
+    padding: 1em; /* Espaciado interno para los mensajes */
+    overflow-y: auto; /* Desplazamiento vertical automático */
+    max-height: 400px; /* Altura máxima para el área de mensajes */
+  }
+  
+  /* Mensaje individual */
+  .chatMessage {
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: 4px;
+    background-color: #f1f1f1; /* Fondo gris claro para los mensajes */
+  }
+  
+  /* Contenedor del input y botón de enviar */
+  .chatInput {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    border-top: 1px solid #ddd; /* Borde gris claro en la parte superior */
+    background-color: #f9f9f9; /* Fondo gris claro para la entrada de texto */
+  }
+  
+  /* Estilo del input de texto */
+  .chatInputText {
+    flex: 1;
+    margin-right: 0.5em;
+    border-radius: 4px;
+    border: 1px solid #ddd; /* Borde gris claro para el input */
+    padding: 0.5em;
+  }
+  
+  /* Estilo del botón de enviar */
+  .sendButton {
+    background-color: #007bff; /* Color de fondo azul para el botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Elimina el borde por defecto del botón */
+    padding: 0.5em 1em; /* Espaciado interno del botón */
+    border-radius: 4px; /* Bordes redondeados del botón */
+    font-size: 1em; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+  }
+  
+  .sendButton:hover {
+    background-color: #0056b3; /* Color de fondo más oscuro al pasar el ratón */
+  }
+  
+  /* Estilo para el botón minimizar */
+  .minimizeButton {
+    background-color: #007bff; /* Color de fondo azul para el botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Elimina el borde por defecto del botón */
+    padding: 0.5em;
+    border-radius: 50%; /* Bordes redondeados para el botón redondo */
+    font-size: 1.2em; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+  }
+  
+  .minimizeButton:hover {
+    background-color: #0056b3; /* Color de fondo más oscuro al pasar el ratón */
+  }

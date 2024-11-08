@@ -1,0 +1,108 @@
+.Home {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    gap: 1em; /* Añade espacio entre las columnas */
+    background-color: #dfdfdf31;
+}
+
+
+
+.FiltrosYOrden {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.ParInputLabel {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    margin-bottom: 10px; /* Espacio entre las filas */
+}
+
+.ParInputLabel input {
+    width: 15px;
+    height: 15px; /* Asegúrate de que el tamaño del input sea el adecuado */
+    margin-right: 8px; /* Espacio entre el input y el label */
+    background-color: #76885bc5 !important;
+}
+
+.ParInputLabel label {
+    margin-left: 10px; 
+    font-size: 14px; /* Tamaño de fuente consistente para los labels */
+}
+
+.boldLabel {
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.buttonPrice {
+    margin: 5px;
+    margin-left: 0;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Añade una sombra para dar un efecto de elevación */
+    background-color: #949494 !important; /* Asegura que el color de fondo del botón sea rojo */
+    color: rgb(255, 255, 255); /* Color del texto del botón */
+    border: none; /* Elimina el borde del botón si es necesario */
+    padding: 0.5em 1em; /* Ajusta el padding según sea necesario */
+    border-radius: 4px; /* Opcional: Redondea las esquinas del botón */
+    font-size: 1em; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    text-align: center; /* Alinea el texto en el centro */
+    display: inline-flex; /* Alinea el botón en línea */
+    align-items: center; /* Alinea el contenido verticalmente en el centro */
+}
+
+.buttonFiltro{
+    margin: 5px;
+    margin-left: 0;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Añade una sombra para dar un efecto de elevación */
+    background-color: #949494 !important; /* Asegura que el color de fondo del botón sea rojo */
+    color: rgb(255, 255, 255); /* Color del texto del botón */
+    border: none; /* Elimina el borde del botón si es necesario */
+    padding: 0.5em 1em; /* Ajusta el padding según sea necesario */
+    border-radius: 4px; /* Opcional: Redondea las esquinas del botón */
+    font-size: 1em; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    text-align: center; /* Alinea el texto en el centro */
+    display: inline-flex; /* Alinea el botón en línea */
+    align-items: center; /* Alinea el contenido verticalmente en el centro */
+    width: 130px;
+}
+
+.paginatorContainer {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    margin-top: 20px; /* Espaciado opcional entre las tarjetas y el paginador */
+    background-color: #dfdfdf00;
+}
+
+.Cards {
+    display: grid; /* Cambia de flex a grid para un diseño más estructurado */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual ancho */
+    gap: 1em; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    margin: 1em; /* Espacio alrededor del contenedor de tarjetas */
+}
+
+@media (max-width: 1024px) {
+    .Cards {
+        display: grid; /* Cambia de flex a grid para un diseño más estructurado */
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual ancho */
+        gap: 5px; /* Espacio entre las tarjetas */
+        justify-content: center; /* Centra las tarjetas horizontalmente */
+        margin: 1em; /* Espacio alrededor del contenedor de tarjetas */
+        max-height: fit-content;
+        min-width: fit-content;
+    }
+}
+
+@media (max-width: 768px) {
+    .Cards {
+        display: flex; /* Cambia de flex a grid para un diseño más estructurado */
+        flex-direction: column; /* Tres columnas de igual ancho */
+        gap: 20px; /* Espacio entre las tarjetas */
+        align-items: center; /* Centra las tarjetas horizontalmente */
+        margin: 1em; /* Espacio alrededor del contenedor de tarjetas */
+    }
+}

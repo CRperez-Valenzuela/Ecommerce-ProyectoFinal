@@ -1,0 +1,73 @@
+/* UserConfig.module.css */
+.cardContainer {
+    max-width: 600px;
+    margin: 1rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cardContainer label {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .cardContainer input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .cardContainer input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .cardContainer button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+  }
+  
+  .cardContainer button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos adicionales para el componente */
+  .userInfoCard, .addressCard {
+    margin: 1rem auto;
+  }
+  
+  .userInfoCard h2, .addressCard p {
+    margin: 0.5rem 0;
+  }
+  
+  .userInfoCard button, .addressCard button {
+    margin-right: 0.5rem;
+  }
+
+  .button{
+    background-color: #949494 !important; /* Asegura que el color de fondo del botón sea rojo */
+    color: white; /* Color del texto del botón */
+    border: none; /* Elimina el borde del botón si es necesario */
+    padding: 0.5em 1em; /* Ajusta el padding según sea necesario */
+    border-radius: 4px; /* Opcional: Redondea las esquinas del botón */
+    font-size: 1em; /* Tamaño de fuente del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    text-align: center; /* Alinea el texto en el centro */
+    display: inline-flex; /* Alinea el botón en línea */
+    align-items: center; /* Alinea el contenido verticalmente en el centro */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Añade una sombra para dar un efecto de elevación */
+  }

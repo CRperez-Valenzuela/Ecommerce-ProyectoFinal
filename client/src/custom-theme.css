@@ -1,0 +1,14 @@
+html, body {
+    height: 100%;
+    margin-top: 40px;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el contenedor ocupe al menos la altura de la ventana */
+}
+
+main {
+    flex: 1; /* Hace que el contenido principal se expanda para llenar el espacio disponible */
+}

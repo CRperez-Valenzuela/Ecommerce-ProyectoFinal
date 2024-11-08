@@ -1,0 +1,20 @@
+.reviewContainer {
+    padding: 1rem;
+    width: 80%;
+    height: auto;
+}
+
+.reviewForm {
+    margin-bottom: 2rem;
+}
+
+.reviewList {
+    margin-top: 2rem;
+}
+
+.reviewCard {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: 80%;
+    height: auto;
+}

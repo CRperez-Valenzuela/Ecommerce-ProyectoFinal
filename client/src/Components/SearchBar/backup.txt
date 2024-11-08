@@ -1,0 +1,24 @@
+.inputSearchContainer {
+    position: relative;
+    width: 350px; /* Ajusta el ancho según tus necesidades */
+  }
+  
+  .inputSearch {
+    width: 100%;
+    padding: 10px 70px 10px 10px; /* Aumenta el padding para hacer espacio para el botón */
+    box-sizing: border-box;
+    border-radius: 15px;
+  }
+  
+  .botonSearch {
+    position: absolute;
+    right: 10px; /* Ajusta según sea necesario */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #76885bc5;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius:10px;
+  }

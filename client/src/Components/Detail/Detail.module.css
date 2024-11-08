@@ -1,0 +1,103 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #dfdfdf31;
+    padding: 0%;
+    
+}
+
+.productCard {
+    width: 100%;
+    max-width: 800px; /* Ajusta según el tamaño que desees */
+    padding: 2rem;
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+.contentWrapper {
+    display: flex;
+    align-items: flex-start;
+    
+    
+}
+
+.imageContainer {
+    flex: 1;
+    margin-right: 1rem; /* Ajusta el margen según sea necesario */
+    padding-right: 1rem;
+}
+
+.productImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow:2px 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease; /* Transición suave para el efecto de zoom */
+}
+
+.productImage:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+}
+
+.detailsContainer {
+    flex: 1;
+}
+
+.styledButton {
+    margin: 5px;
+    background-color: #949494;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+}
+
+.sneakerTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.sneakerTable td {
+    padding: 0.5rem;
+    border: none;
+    vertical-align: top;
+}
+
+.boldTd {
+    font-weight: bolder;
+    color: black;
+}
+
+.description {
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 0.5rem;
+}
+
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.spinner {
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    border-left: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

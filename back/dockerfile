@@ -1,0 +1,21 @@
+# Usa una imagen de Node como base
+FROM node:18
+
+# Establece el directorio de trabajo en el contenedor
+WORKDIR /app
+
+# Copia el archivo package.json y package-lock.json
+COPY package.json ./
+COPY package-lock.json ./
+
+# Instala las dependencias
+RUN npm install
+
+# Copia el código del backend al contenedor
+COPY . .
+
+# Expone el puerto en el que corre el backend
+EXPOSE 3000
+
+# Comando para iniciar el servidor
+CMD ["npm", "start"]
